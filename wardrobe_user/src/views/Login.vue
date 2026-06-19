@@ -6,33 +6,39 @@
       <h2>网上衣橱系统</h2>
 
       <el-input
-          v-model="username"
-          placeholder="请输入用户名"
-          style="margin-bottom:15px"
-      />
-
+    v-model="username"
+    placeholder="请输入用户名"
+    style="margin-bottom:15px"
+    @keyup.enter="login"
+        />
       <el-input
           v-model="password"
           type="password"
+          show-password
           placeholder="请输入密码"
           style="margin-bottom:15px"
+          @keyup.enter="login"
       />
 
       <el-button
           type="primary"
           style="width:100%"
           @click="login"
+
       >
         登录
       </el-button>
 
-      <el-button
-          style="width:100%;margin-top:10px"
-          @click="$router.push('/register')"
-      >
-        注册
-      </el-button>
-
+<el-button
+    style="
+      width:100%;
+      margin-top:10px;
+      margin-left:0;
+    "
+    @click="$router.push('/register')"
+>
+  注册
+</el-button>
     </el-card>
 
   </div>

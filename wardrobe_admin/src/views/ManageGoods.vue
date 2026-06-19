@@ -190,6 +190,11 @@
         placeholder="商品价格"
         style="margin-bottom:10px"
       />
+      <el-input
+      v-model="form.sizes"
+      placeholder="请输入尺码，例如：S,M,L,XL"
+      style="margin-bottom:10px"
+      />
 
       <el-upload
         action="http://localhost:8080/wardrobe_back/uploadFile"
@@ -261,7 +266,8 @@ const form = ref({
   typeName:'',
   style:'',
   price:'',
-  image:''
+  image:'',
+  sizes:''
 })
 
 const loadData = async ()=>{
@@ -321,7 +327,9 @@ const addGoods = async()=>{
           form.value.price,
 
         image:
-          form.value.image
+          form.value.image,
+        sizesText:
+      form.value.sizes
       }
     )
 
@@ -339,7 +347,8 @@ const addGoods = async()=>{
         typeName:'',
         style:'',
         price:'',
-        image:''
+        image:'',
+        sizes:''
       }
 
       loadData()

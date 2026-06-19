@@ -234,7 +234,7 @@ const goodsWithExtra = computed(() => {
   return goodsList.value.map((item, index) => ({
     ...item,
     originalPrice: item.price * (1 + Math.random() * 0.5).toFixed(2),
-    sales: Math.floor(Math.random() * 1000),
+    sales: item.saleCount || 0,
     discount: Math.random() > 0.7 ? Math.floor(Math.random() * 3 + 8) : null,
     isHot: Math.random() > 0.8,
     isNew: Math.random() > 0.9
@@ -969,3 +969,5 @@ onMounted(() => {
   }
 }
 </style>
+
+
